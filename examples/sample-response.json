@@ -1,0 +1,265 @@
+{
+  "ok": true,
+  "schemaVersion": 1,
+  "scanner": {
+    "name": "EaglerScan",
+    "mode": "static",
+    "note": "Static analysis only; nothing in the mod is executed."
+  },
+  "generatedAt": "2026-10-22T05:21:23.221Z",
+  "input": {
+    "url": null,
+    "resolvedUrl": null,
+    "name": "guns.js",
+    "bytes": 580,
+    "lines": 7,
+    "sha256": "f01b87faf6d6a025c9a60d16f22587789985cfcc46228587d5f18416e8805dc6",
+    "contentType": null
+  },
+  "summary": {
+    "versions": {
+      "declared": 0,
+      "inferred": 0,
+      "known": false
+    },
+    "dependencies": {
+      "total": 4
+    },
+    "likelyRequired": [
+      "AsyncSink"
+    ],
+    "remoteHosts": [
+      "example.com"
+    ],
+    "assets": {
+      "total": 2,
+      "embedded": 1,
+      "remote": 1,
+      "relative": 0,
+      "runtime": 0
+    },
+    "warnings": {
+      "total": 2,
+      "high": 0,
+      "medium": 2,
+      "low": 0
+    }
+  },
+  "report": {
+    "versions": [
+      {
+        "key": "unknown",
+        "version": "Unknown",
+        "level": "unknown",
+        "reason": "No reliable version declaration detected; compatibility is unknown",
+        "line": null,
+        "source": ""
+      }
+    ],
+    "dependencies": [
+      {
+        "key": "lib:asyncsink",
+        "name": "AsyncSink",
+        "type": "Declared requirement",
+        "status": "Likely required",
+        "level": "declared",
+        "detail": "Stated in the file's description metadata; the scanner cannot verify it is installed.",
+        "evidences": [
+          {
+            "line": 2,
+            "match": "Requires AsyncSink.",
+            "source": "ModAPI.meta.description(\"Requires AsyncSink.\");",
+            "kind": "Declared requirement",
+            "origin": "description metadata"
+          },
+          {
+            "line": 5,
+            "match": "AsyncSink",
+            "source": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png\", await (await fetch(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==\")).arrayBuffer());",
+            "kind": "Code reference"
+          },
+          {
+            "line": 5,
+            "match": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png\")",
+            "source": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png\", await (await fetch(\"data:image/png;base64,…\")).arrayBuffer());",
+            "kind": "Asset library"
+          },
+          {
+            "line": 6,
+            "match": "AsyncSink",
+            "source": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\", await (await fetch(\"https://example.com/shot.ogg\")).arrayBuffer());",
+            "kind": "Code reference"
+          },
+          {
+            "line": 6,
+            "match": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\")",
+            "source": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\", await (await fetch(\"https://example.com/shot.ogg\")).arrayBuffer());",
+            "kind": "Asset library"
+          }
+        ],
+        "evidenceTypes": [
+          "declared in description metadata",
+          "Code reference",
+          "Asset library"
+        ],
+        "origins": [
+          "description metadata"
+        ],
+        "details": [
+          "Stated in the file's description metadata; the scanner cannot verify it is installed."
+        ],
+        "lines": [
+          "2",
+          "5",
+          "6"
+        ],
+        "line": 2,
+        "source": "ModAPI.meta.description(\"Requires AsyncSink.\");\nAsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png\", await (await fetch(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==\")).arrayBuffer());\nAsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png\", await (await fetch(\"data:image/png;base64,…\")).arrayBuffer());\nAsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\", await (await fetch(\"https://example.com/shot.ogg\")).arrayBuffer());"
+      },
+      {
+        "key": "api:modapi",
+        "name": "ModAPI",
+        "type": "Core API reference",
+        "status": "API usage detected",
+        "level": "inferred",
+        "detail": "Eaglercraft ModAPI usage detected. This is strong evidence of a ModAPI-based mod, but does not by itself prove the exact game version.",
+        "evidences": [
+          {
+            "line": 1,
+            "match": "ModAPI",
+            "source": "ModAPI.meta.title(\"guns\");",
+            "kind": "API reference"
+          }
+        ],
+        "evidenceTypes": [
+          "API reference"
+        ],
+        "origins": [],
+        "details": [
+          "Eaglercraft ModAPI usage detected. This is strong evidence of a ModAPI-based mod, but does not by itself prove the exact game version."
+        ],
+        "lines": [
+          "1"
+        ],
+        "line": 1,
+        "source": "ModAPI.meta.title(\"guns\");"
+      },
+      {
+        "key": "lib:player",
+        "name": "player",
+        "type": "Imported module",
+        "status": "Unverified",
+        "level": "declared",
+        "detail": "Role unknown: could be a loader-provided module, an npm package or another mod, and it cannot be determined whether it must be installed separately.",
+        "evidences": [
+          {
+            "line": 3,
+            "match": "require(\"player\")",
+            "source": "const player = require(\"player\");",
+            "kind": "CommonJS require"
+          }
+        ],
+        "evidenceTypes": [
+          "CommonJS require"
+        ],
+        "origins": [],
+        "details": [
+          "Role unknown: could be a loader-provided module, an npm package or another mod, and it cannot be determined whether it must be installed separately."
+        ],
+        "lines": [
+          "3"
+        ],
+        "line": 3,
+        "source": "const player = require(\"player\");"
+      },
+      {
+        "key": "remote:example.com",
+        "name": "example.com",
+        "type": "Remote resource",
+        "status": "Runtime fetch",
+        "level": "inferred",
+        "detail": "Fetched at runtime (fetch). Consumed by AsyncSink.setFile().",
+        "evidences": [
+          {
+            "line": 6,
+            "match": "https://example.com/shot.ogg",
+            "source": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\", await (await fetch(\"https://example.com/shot.ogg\")).arrayBuffer());",
+            "kind": "Remote resource"
+          }
+        ],
+        "evidenceTypes": [
+          "Remote resource"
+        ],
+        "origins": [],
+        "details": [
+          "Fetched at runtime (fetch). Consumed by AsyncSink.setFile()."
+        ],
+        "lines": [
+          "6"
+        ],
+        "line": 6,
+        "source": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\", await (await fetch(\"https://example.com/shot.ogg\")).arrayBuffer());"
+      }
+    ],
+    "assets": [
+      {
+        "path": "resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png",
+        "consumer": "AsyncSink.setFile",
+        "owner": "AsyncSink",
+        "line": 5,
+        "snippet": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png\", await (await fetch(\"data:image/png;base64,…\")).arrayBuffer());",
+        "cls": "inline",
+        "host": "embedded data URL",
+        "mime": "image/png",
+        "bytes": 72,
+        "via": "fetch",
+        "kind": "Texture",
+        "origin": "embedded in the file (embedded data URL, image/png, ~72 B)",
+        "network": false
+      },
+      {
+        "path": "resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg",
+        "consumer": "AsyncSink.setFile",
+        "owner": "AsyncSink",
+        "line": 6,
+        "snippet": "AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\", await (await fetch(\"https://example.com/shot.ogg\")).arrayBuffer());",
+        "cls": "external",
+        "host": "example.com",
+        "url": "https://example.com/shot.ogg",
+        "via": "fetch",
+        "kind": "Sound",
+        "origin": "remote: example.com",
+        "network": true
+      }
+    ],
+    "warnings": [
+      {
+        "key": "require",
+        "severity": "medium",
+        "title": "CommonJS require() detected",
+        "detail": "require() usually needs a CommonJS-capable runtime or bundler; browsers do not provide it by default.",
+        "line": 3,
+        "source": "const player = require(\"player\");"
+      },
+      {
+        "key": "network:fetch|external|example.com",
+        "severity": "medium",
+        "title": "Network access: fetch → example.com",
+        "detail": "example.com must send CORS headers (Access-Control-Allow-Origin) or the browser blocks the read. It also fails offline or if the loader restricts hosts. Loads: https://example.com/shot.ogg Response feeds AsyncSink.setFile() via .arrayBuffer(). If this request is blocked, that call gets no data.",
+        "line": 6,
+        "source": "L6: AsyncSink.setFile(\"resourcepacks/AsyncSinkLib/assets/minecraft/sounds/shot.ogg\", await (await fetch(\"https://example.com/shot.ogg\")).arrayBuffer());"
+      }
+    ],
+    "metadata": [
+      {
+        "label": "Name",
+        "value": "guns"
+      },
+      {
+        "label": "Description",
+        "value": "Requires AsyncSink."
+      }
+    ],
+    "findings": []
+  }
+}

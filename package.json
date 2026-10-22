@@ -1,0 +1,14 @@
+{
+  "name": "eaglerscan-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy",
+    "test": "node test/run.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
