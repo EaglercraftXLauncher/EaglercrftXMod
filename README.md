@@ -12,25 +12,14 @@ src/fetcher.js         safe remote fetch (SSRF guard, redirects, size/time limit
 src/handler.js         request handling, JSON shape, caching, auth
 test/run.mjs           offline tests (npm test)
 ```
-
-## Deploy
-
-```bash
-npm install
-npx wrangler pages deploy        # reads wrangler.jsonc, publishes ./public + functions/
-```
-
-Or connect the repo to Cloudflare Pages (Git integration): **build command** empty, **build output directory** `public`.
-Local dev: `npm run dev` then open http://127.0.0.1:8788.
-
 ## Use
 
 ```bash
 # scan a mod by URL
-curl "https://<your-project>.pages.dev/api/scan?url=https://raw.githubusercontent.com/user/repo/main/mod.js"
+curl "https://https://eaglercraftxmod.pages.dev/api/scanurl=https://raw.githubusercontent.com/user/repo/main/mod.js"
 
 # GitHub "blob" page URLs are rewritten to raw automatically
-curl "https://<your-project>.pages.dev/api/scan?url=https://github.com/user/repo/blob/main/mod.js&pretty"
+curl "https://eaglercraftxmod.pages.dev/api/scan?url=https://github.com/user/repo/blob/main/mod.js&pretty"
 
 # POST a URL, raw source, or JSON source
 curl -X POST .../api/scan -H 'content-type: application/json' -d '{"url":"https://example.com/mod.js"}'
